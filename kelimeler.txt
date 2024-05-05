@@ -1,0 +1,100 @@
+zaman,time,Time flies when you're having fun.
+yıl,year,This year went by so quickly.
+insanlar,people,People come from all walks of life.
+yol,way,There's more than one way to solve a problem.
+gün,day,Today is a beautiful day.
+adam,man,The man walked briskly down the street.
+şey,thing,That thing over there looks interesting.
+kadın,woman,The woman smiled warmly at her child.
+hayat,life,Life is full of surprises.
+çocuk,child,The child giggled with joy.
+dünya,world,The world is vast and diverse.
+okul,school,I learned a lot in school today.
+durum,state,The current state of affairs is uncertain.
+aile,family,Family is important for emotional support.
+öğrenci,student,The student eagerly raised her hand to answer.
+grup,group,Let's work together as a group.
+ülke,country,My country is known for its beautiful landscapes.
+problem,problem,Solving this problem requires creativity.
+el,hand,He extended his hand in friendship.
+parça,part,Every part of the machine has a specific function.
+yer,place,Let's find a quiet place to talk.
+dava,case,In this case we need more evidence.
+hafta,week,I'm looking forward to the weekend.
+şirket,company,I enjoy working for this company.
+sistem,system,The system needs to be updated regularly.
+program,program,I enrolled in a coding program.
+soru,question,Do you have a question about the assignment?
+iş,work,Hard work always pays off.
+devlet,government,The government announced new policies today.
+sayı,number,Can you give me your phone number?
+gece,night,The stars shine brightly at night.
+nokta,point,His argument had a valid point.
+ev,home,There's no place like home.
+su,water,Water is essential for life.
+oda,room,Please tidy up your room.
+anne,mother,My mother makes the best homemade cookies.
+alan,area,This area is known for its high crime rate.
+para,money,Money can't buy happiness but it helps.
+hikaye,story,Tell me a story from your childhood.
+hakikat,fact,It's a well-known fact that exercise is good for health.
+ay,month,My birthday is next month.
+çok,lot,There's a lot to do before the party.
+sağ,right,Everyone deserves the right to speak their mind.
+çalışmak,study,I need to study for my exams.
+kitap,book,I lost myself in a good book last night.
+göz,eye,Her eyes sparkled with excitement.
+meslek,job,Finding a job in this economy is tough.
+kelime,word,His word is as good as gold.
+işletme,business,She runs a successful business.
+sorun,issue,Climate change is a pressing issue.
+taraf,side,Let's look at this issue from both sides.
+nazik,kind,It's important to be kind to others.
+kafa,head,He scratched his head trying to remember.
+konut,house,Their house is located in a quiet neighborhood.
+hizmet,service,The customer service here is excellent.
+arkadaş,friend,A true friend is always there for you.
+baba,father,My father taught me how to ride a bike.
+güç,power,With great power comes great responsibility.
+saat,hour,The meeting will start in an hour.
+oyun,game,Let's play a game of chess.
+çizgi,line,Please wait in line for your turn.
+son,end,This is just the beginning not the end.
+üye,member,She's a valuable member of our team.
+kanun,law,It's important to abide by the law.
+araba,car,His dream car is a classic Mustang.
+şehir,city,New York City never sleeps.
+toplum,community,We need to build a strong sense of community.
+isim,name,What's your name again?
+başkan,president,The president addressed the nation last night.
+takım,team,We work well together as a team.
+dakika,minute,I'll be there in just a minute.
+fikir,idea,She came up with a brilliant idea.
+fare,mouse,I saw a small mouse in the garden.
+vücut,body,Exercise is good for both the mind and body.
+bilgi,information,We need more information to make a decision.
+geri,back,He carried the heavy load on his back.
+ebeveyn,parent,Parents play a crucial role in a child's development.
+yüz,face,Her face lit up with joy.
+diğerleri,others,Let's consider the needs of others.
+seviye,level,She reached a new level of success.
+ofis,office,I have a meeting at the office tomorrow.
+kapı,door,Please close the door behind you.
+sağlık,health,Good health is priceless.
+kişi,person,Each person has their own unique story.
+sanat,art,Art can evoke powerful emotions.
+savaş,war,War brings devastation and suffering.
+tarih,history,Studying history helps us understand the present.
+parti,party,Let's have a party to celebrate!
+sonuç,result,Hard work always leads to positive results.
+değiştirmek,change,Change is inevitable embrace it.
+sabah,morning,I love the smell of fresh coffee in the morning.
+sebep,reason,What's the reason behind your decision?
+araştırma,research,The research findings were groundbreaking.
+kız,girl,The little girl skipped happily along the path.
+ayna,mirror,I always check myself in the mirror before leaving the house.
+an,moment,Cherish every moment for time is fleeting.
+hava,air,The air was crisp and clean after the rain.
+öğretmen,teacher,The teacher explained the concept clearly.
+kuvvet,force,The police had to use force to control the crowd.
+eğitim,education,Education is the key to a brighter future.
