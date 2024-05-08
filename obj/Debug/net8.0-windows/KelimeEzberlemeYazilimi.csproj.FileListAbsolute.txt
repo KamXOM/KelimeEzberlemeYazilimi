@@ -20,3 +20,9 @@ C:\Users\onurm\source\repos\KelimeEzberlemeYazilimi\KelimeEzberlemeYazilimi\obj\
 C:\Users\onurm\source\repos\KelimeEzberlemeYazilimi\KelimeEzberlemeYazilimi\obj\Debug\net8.0-windows\KelimeEzberlemeYazilimi.SifremiUnuttum.resources
 C:\Users\onurm\source\repos\KelimeEzberlemeYazilimi\KelimeEzberlemeYazilimi\obj\Debug\net8.0-windows\KelimeEzberlemeYazilimi.SinavEkrani.resources
 C:\Users\onurm\source\repos\KelimeEzberlemeYazilimi\KelimeEzberlemeYazilimi\obj\Debug\net8.0-windows\KelimeEzberlemeYazilimi.Anasayfa.resources
+C:\Users\onurm\source\repos\KelimeEzberlemeYazilimi\KelimeEzberlemeYazilimi\bin\Debug\net8.0-windows\OxyPlot.dll
+C:\Users\onurm\source\repos\KelimeEzberlemeYazilimi\KelimeEzberlemeYazilimi\bin\Debug\net8.0-windows\OxyPlot.WindowsForms.dll
+C:\Users\onurm\source\repos\KelimeEzberlemeYazilimi\KelimeEzberlemeYazilimi\obj\Debug\net8.0-windows\KelimeEzberlemeYazilimi.csproj.AssemblyReference.cache
+C:\Users\onurm\source\repos\KelimeEzberlemeYazilimi\KelimeEzberlemeYazilimi\obj\Debug\net8.0-windows\KelimeEzberlemeYazilimi.sourcelink.json
+C:\Users\onurm\source\repos\KelimeEzberlemeYazilimi\KelimeEzberlemeYazilimi\obj\Debug\net8.0-windows\KelimeEz.DECEB797.Up2Date
+C:\Users\onurm\source\repos\KelimeEzberlemeYazilimi\KelimeEzberlemeYazilimi\obj\Debug\net8.0-windows\KelimeEzberlemeYazilimi.Rapor.resources

@@ -81,7 +81,7 @@
             cevapTextBox.Location = new Point(149, 138);
             cevapTextBox.Name = "cevapTextBox";
             cevapTextBox.Size = new Size(209, 27);
-            cevapTextBox.TabIndex = 3;
+            cevapTextBox.TabIndex = 1;
             // 
             // pictureBox1
             // 
@@ -130,7 +130,7 @@
             sinavBitirButton.Location = new Point(438, 322);
             sinavBitirButton.Name = "sinavBitirButton";
             sinavBitirButton.Size = new Size(276, 64);
-            sinavBitirButton.TabIndex = 11;
+            sinavBitirButton.TabIndex = 4;
             sinavBitirButton.Text = "Sınavı Bitir!";
             sinavBitirButton.UseVisualStyleBackColor = true;
             sinavBitirButton.Click += sinavBitirButton_Click;
@@ -153,7 +153,7 @@
             oncekiButton.Location = new Point(438, 249);
             oncekiButton.Name = "oncekiButton";
             oncekiButton.Size = new Size(101, 51);
-            oncekiButton.TabIndex = 9;
+            oncekiButton.TabIndex = 3;
             oncekiButton.Text = "Önceki";
             oncekiButton.UseVisualStyleBackColor = true;
             oncekiButton.Click += oncekiButton_Click;
@@ -165,7 +165,7 @@
             sonrakiButton.Location = new Point(613, 249);
             sonrakiButton.Name = "sonrakiButton";
             sonrakiButton.Size = new Size(101, 51);
-            sonrakiButton.TabIndex = 8;
+            sonrakiButton.TabIndex = 2;
             sonrakiButton.Text = "Sonraki";
             sonrakiButton.UseVisualStyleBackColor = true;
             sonrakiButton.Click += sonrakiButton_Click;

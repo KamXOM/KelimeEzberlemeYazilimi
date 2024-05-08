@@ -4,6 +4,9 @@
     <Compile Update="Anasayfa.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Rapor.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="GirisYap.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -82,6 +82,7 @@ namespace KelimeEzberlemeYazilimi
                 Resim = resim,
                 BilinmeSeviyesi = 0,
                 SonrakiTekrarGunu = 0,
+                YanlisYapmaSayisi = 0,
             };
             KelimeDeposu.kelimeListesi.Add(yeniKelime);
             MessageBox.Show("Kelime ekleme işlemi başarıyla tamamlandı!",
@@ -112,6 +113,7 @@ namespace KelimeEzberlemeYazilimi
                 Resim = resim,
                 BilinmeSeviyesi = 0,
                 SonrakiTekrarGunu = 0,
+                YanlisYapmaSayisi = 0,
             };
             KelimeDeposu.kelimeListesi.Add(yeniKelime);
             MessageBox.Show("Kelime ekleme işlemi başarıyla tamamlandı!\n" +

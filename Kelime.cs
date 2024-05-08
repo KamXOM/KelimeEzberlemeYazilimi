@@ -14,6 +14,7 @@ namespace KelimeEzberlemeYazilimi
         public string OrnekCumle { get; set; }
         public string Resim { get; set; }
         public int BilinmeSeviyesi { get; set; }
+        public int YanlisYapmaSayisi { get; set; }
         public int SonrakiTekrarGunu { get; set; }
     }
     public class KelimeDeposu
@@ -39,6 +40,7 @@ namespace KelimeEzberlemeYazilimi
                     OrnekCumle = ornekCumle,
                     BilinmeSeviyesi = 0,
                     SonrakiTekrarGunu = 0,
+                    YanlisYapmaSayisi = 0,
                 };
                 kelimeListesi.Add(kelime);
             }
@@ -95,6 +97,7 @@ namespace KelimeEzberlemeYazilimi
                     {
                         kelime.BilinmeSeviyesi = 0;
                         kelime.SonrakiTekrarGunu = 0;
+                        kelime.YanlisYapmaSayisi++;
                     }
                     break;
                 }

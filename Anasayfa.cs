@@ -19,6 +19,7 @@ namespace KelimeEzberlemeYazilimi
         private static Anasayfa instance;
         public static int SoruSayisi = 10;
         private bool gunatlandi = false;
+        private Rapor raporEkrani;
         public static Anasayfa GetInstance()
         {
             if (instance == null)
@@ -53,13 +54,15 @@ namespace KelimeEzberlemeYazilimi
                 kayitOlButton.Visible = false;
                 sinavaBaslaButton.Visible = true;
                 kelimeEkleButton.Visible = true;
+                raporButton.Visible = true;
             }
             else
             {
                 girisYapButton.Visible = true;
                 kayitOlButton.Visible = true;
                 sinavaBaslaButton.Visible = false;
-                kelimeEkleButton.Visible= false;
+                kelimeEkleButton.Visible = false;
+                raporButton.Visible = false;
             }
         }
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -169,6 +172,31 @@ namespace KelimeEzberlemeYazilimi
             KelimeEkle kelimeekle = new KelimeEkle();
             kelimeekle.Show();
             Hide();
+        }
+
+        private void raporButton_Click(object sender, EventArgs e)
+        {
+            RaporEkraniAc();
+        }
+        private void RaporEkraniAc()
+        {
+            if (raporEkrani == null || raporEkrani.IsDisposed)
+            {
+                raporEkrani = new Rapor();
+                raporEkrani.FormClosed += Rapor_FormClosed;
+                raporEkrani.Show();
+                Hide();
+            }
+            else
+            {
+                raporEkrani.Activate();
+            }
+        }
+        private void Rapor_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            // Rapor ekranı kapatıldığında Anasayfa formunu yeniden aç
+            Show();
+            Activate();
         }
     }
 }

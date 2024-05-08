@@ -73,7 +73,7 @@ namespace KelimeEzberlemeYazilimi
                 pictureBox1.Image = Image.FromFile(sinavListesi[0].Resim);
             }
             kullaniciCevaplari.Clear();
-            for (int i = 0; i < Anasayfa.SoruSayisi; i++)
+            for (int i = 0; i < sinavListesi.Count; i++)
             {
                 kullaniciCevaplari.Add("");
             }
@@ -113,6 +113,7 @@ namespace KelimeEzberlemeYazilimi
                 cevapTextBox.Text = kullaniciCevaplari[soruIndex];
             }
             else { cevapTextBox.Clear(); }
+            cevapTextBox.Focus();
         }
 
         private void oncekiButton_Click(object sender, EventArgs e)

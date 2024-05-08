@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            raporButton = new Button();
+            kelimeEkleButton = new Button();
             kayitOlButton = new Button();
             girisYapButton = new Button();
             sinavaBaslaButton = new Button();
@@ -45,7 +47,6 @@
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
-            kelimeEkleButton = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             settingsPanel.SuspendLayout();
@@ -56,6 +57,7 @@
             // panel1
             // 
             panel1.Anchor = AnchorStyles.None;
+            panel1.Controls.Add(raporButton);
             panel1.Controls.Add(kelimeEkleButton);
             panel1.Controls.Add(kayitOlButton);
             panel1.Controls.Add(girisYapButton);
@@ -67,6 +69,30 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(776, 426);
             panel1.TabIndex = 0;
+            // 
+            // raporButton
+            // 
+            raporButton.Anchor = AnchorStyles.None;
+            raporButton.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            raporButton.Location = new Point(3, 360);
+            raporButton.Name = "raporButton";
+            raporButton.Size = new Size(153, 63);
+            raporButton.TabIndex = 8;
+            raporButton.Text = "Rapor Al";
+            raporButton.UseVisualStyleBackColor = true;
+            raporButton.Click += raporButton_Click;
+            // 
+            // kelimeEkleButton
+            // 
+            kelimeEkleButton.Anchor = AnchorStyles.None;
+            kelimeEkleButton.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            kelimeEkleButton.Location = new Point(307, 303);
+            kelimeEkleButton.Name = "kelimeEkleButton";
+            kelimeEkleButton.Size = new Size(159, 53);
+            kelimeEkleButton.TabIndex = 7;
+            kelimeEkleButton.Text = "Kelime Ekle";
+            kelimeEkleButton.UseVisualStyleBackColor = true;
+            kelimeEkleButton.Click += kelimeEkleButton_Click;
             // 
             // kayitOlButton
             // 
@@ -255,18 +281,6 @@
             label1.TabIndex = 0;
             label1.Text = "Tercih Edilen Soru Sayısı:";
             // 
-            // kelimeEkleButton
-            // 
-            kelimeEkleButton.Anchor = AnchorStyles.None;
-            kelimeEkleButton.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            kelimeEkleButton.Location = new Point(307, 303);
-            kelimeEkleButton.Name = "kelimeEkleButton";
-            kelimeEkleButton.Size = new Size(159, 53);
-            kelimeEkleButton.TabIndex = 7;
-            kelimeEkleButton.Text = "Kelime Ekle";
-            kelimeEkleButton.UseVisualStyleBackColor = true;
-            kelimeEkleButton.Click += kelimeEkleButton_Click;
-            // 
             // Anasayfa
             // 
             AutoScaleMode = AutoScaleMode.None;
@@ -310,5 +324,6 @@
         private Button kayitOlButton;
         private Button girisYapButton;
         private Button kelimeEkleButton;
+        private Button raporButton;
     }
 }

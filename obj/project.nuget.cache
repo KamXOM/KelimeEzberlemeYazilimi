@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "iSb8AhzsBuTPePLzHz2ypDYxD+0qeNMTHyBoOqMX8ku0IMg+wJcGHqgwvDKNSIX1u3OIX94ikFxiQryDyeAtsQ==",
+  "dgSpecHash": "ZdAOglpRZKLqZNf85bXgKNPPhjWi2fea4b/Q55r1SEXjQp/c3qWTFx24QVtJVbNM4oxljAQbfYWyuZN4iyvU9g==",
   "success": true,
   "projectFilePath": "C:\\Users\\onurm\\source\\repos\\KelimeEzberlemeYazilimi\\KelimeEzberlemeYazilimi\\KelimeEzberlemeYazilimi.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\onurm\\.nuget\\packages\\oxyplot.core\\2.1.2\\oxyplot.core.2.1.2.nupkg.sha512",
+    "C:\\Users\\onurm\\.nuget\\packages\\oxyplot.windowsforms\\2.1.2\\oxyplot.windowsforms.2.1.2.nupkg.sha512"
+  ],
   "logs": []
 }
