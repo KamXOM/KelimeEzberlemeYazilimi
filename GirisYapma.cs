@@ -13,7 +13,7 @@ namespace KelimeEzberlemeYazilimi
             foreach (Kullanici kullanici in KayitliKullaniciListesi.kayitliKullanicilar)
             {
                 if (kullanici.Eposta == eposta && kullanici.Sifre == sifre)
-                {
+                {//bilgiler doğruysa giriş true döndürür
                     return true;
                 }
             }

@@ -44,12 +44,12 @@ namespace KelimeEzberlemeYazilimi
             openFileDialog1.Filter = "JPEG Dosyaları (*.jpeg)|*.jpeg|JPG Dosyaları (*.jpg)" +
                 "|*.jpg|PNG Dosyaları (*.png)|*.png|Tüm Dosyalar (*.*)|*.*";
             openFileDialog1.FilterIndex = 4;
-        }
+        }//dialog ayarları açılır sekme için
         private void resimYukleLabel_Click(object sender, EventArgs e)
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                pictureBox.Load(openFileDialog1.FileName);
+                pictureBox.Load(openFileDialog1.FileName);//resim yükleme
             }
         }
         private void PanelOrtalama()
@@ -69,7 +69,7 @@ namespace KelimeEzberlemeYazilimi
             string turkcesi = trTextBox.Text;
             string ingilizcesi = enTextBox.Text;
             string ornekcumle = sentenceTextBox.Text;
-            string resim = openFileDialog1.FileName;
+            string resim = openFileDialog1.FileName;//bilgieri ilgili yerlere kaydeder
             if (string.IsNullOrWhiteSpace(resim))
             {
                 resim = null;
@@ -84,11 +84,11 @@ namespace KelimeEzberlemeYazilimi
                 SonrakiTekrarGunu = 0,
                 YanlisYapmaSayisi = 0,
             };
-            KelimeDeposu.kelimeListesi.Add(yeniKelime);
+            KelimeDeposu.kelimeListesi.Add(yeniKelime);//yeni kelimeyi listeye ekler
             MessageBox.Show("Kelime ekleme işlemi başarıyla tamamlandı!",
                 "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Anasayfa anasayfa = new Anasayfa();
-            anasayfa.Show();
+            anasayfa.Show();//ve anasayfaya atar
             Hide();
         }
         private void temizleButton_Click(object sender, EventArgs e)
@@ -115,7 +115,7 @@ namespace KelimeEzberlemeYazilimi
                 SonrakiTekrarGunu = 0,
                 YanlisYapmaSayisi = 0,
             };
-            KelimeDeposu.kelimeListesi.Add(yeniKelime);
+            KelimeDeposu.kelimeListesi.Add(yeniKelime);//yeni kelimeyi listeye ekler ve devam eder
             MessageBox.Show("Kelime ekleme işlemi başarıyla tamamlandı!\n" +
                 "Sıradaki kelimeyi ekleyebilirsiniz.",
                 "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -126,7 +126,7 @@ namespace KelimeEzberlemeYazilimi
             trTextBox.Clear();
             enTextBox.Clear();
             sentenceTextBox.Clear();
-            pictureBox.Image = null;
+            pictureBox.Image = null;//tüm textbox ve resimi temizler sıfırlar
         }
 
         private void geriButton_Click(object sender, EventArgs e)

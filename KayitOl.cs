@@ -44,7 +44,7 @@ namespace KelimeEzberlemeYazilimi
                 {
                     MessageBox.Show("Bu E-Posta zaten kayıtlı. Lütfen Giriş Yapınız.",
                     "Kayıt Başarısız!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    kayitlimi = true;
+                    kayitlimi = true;//e posta zaten kayıtlıysa uyarı mesajı
                     break;
                 }
             }
@@ -55,7 +55,7 @@ namespace KelimeEzberlemeYazilimi
                     Eposta = eposta,
                     Sifre = sifre,
                     FavKelime = favkelime
-                };
+                };//yeni kullanıcıyı listeye ekler
                 KayitliKullaniciListesi.kayitliKullanicilar.Add(yeniKullanici);
                 MessageBox.Show("Kayıt işlemi başarıyla tamamlandı!\n" +
                     "Giriş Yapabilirsiniz.", "Başarılı", 

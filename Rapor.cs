@@ -32,7 +32,7 @@ namespace KelimeEzberlemeYazilimi
             DataTable dt = new DataTable();
             dt.Columns.Add("Türkçe Kelime", typeof(string));
             dt.Columns.Add("İngilizce Karşılığı", typeof(string));
-            dt.Columns.Add("Örnek Cümle", typeof(string));
+            dt.Columns.Add("Örnek Cümle", typeof(string));//sütunları koyar listeler
             dt.Columns.Add("Bilinme Sayısı", typeof(int));
             dt.Columns.Add("Yanlış Yapma Sayısı", typeof(int));
             dt.Columns.Add("Sonraki Tekrar Günü", typeof(int));
@@ -40,8 +40,8 @@ namespace KelimeEzberlemeYazilimi
             {
                 dt.Rows.Add(kelime.TurkceKelime, kelime.IngilizceKarsiligi, kelime.OrnekCumle, 
                 kelime.BilinmeSeviyesi, kelime.YanlisYapmaSayisi, kelime.SonrakiTekrarGunu);
-            }
-            dataGridView1.DataSource = dt;
+            }//kelimelerden satırları doldurur
+            dataGridView1.DataSource = dt;//doldurulmuş tabloyu datagridview a yükler
         }
         private int _currentPageIndex = 0;
         private int _rowIndex = 0;
@@ -96,7 +96,8 @@ namespace KelimeEzberlemeYazilimi
                 DataGridViewRow row = dataGridView1.Rows[i];
                 for (int j = 0; j < row.Cells.Count; j++)
                 {
-                    graphics.DrawString(row.Cells[j].Value.ToString(), dataGridView1.Font, Brushes.Black, new PointF(100 * j, 100 + (i - startIndex + 1) * dataGridView1.Rows[0].Height));
+                    graphics.DrawString(row.Cells[j].Value.ToString(), dataGridView1.Font, Brushes.Black, 
+                    new PointF(100 * j, 100 + (i - startIndex + 1) * dataGridView1.Rows[0].Height));
                 }
             }
 
@@ -111,7 +112,7 @@ namespace KelimeEzberlemeYazilimi
 
         private void printPreviewDialog1_FormClosed(object sender, FormClosedEventArgs e)
         {
-            // PrintPreviewDialog kapandığında sayfa indeksini sıfırla
+            // printpreviewdialog kapandığında sayfa indeksini sıfırlar
             _currentPageIndex = 0;
         }
     }

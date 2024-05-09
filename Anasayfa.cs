@@ -49,7 +49,7 @@ namespace KelimeEzberlemeYazilimi
             checkBox1.Checked = false;
             gunatlandi = false;
             if (GirisYap.GirisYapildi == true)
-            {
+            {//giriş yapılmışsa rapor alma kelime ekleme sınav olma vs. özellikleri gelir
                 girisYapButton.Visible = false;
                 kayitOlButton.Visible = false;
                 sinavaBaslaButton.Visible = true;
@@ -57,7 +57,7 @@ namespace KelimeEzberlemeYazilimi
                 raporButton.Visible = true;
             }
             else
-            {
+            {//giriş yapılmamışsa belirli özelliklere erişim yok
                 girisYapButton.Visible = true;
                 kayitOlButton.Visible = true;
                 sinavaBaslaButton.Visible = false;
@@ -112,7 +112,7 @@ namespace KelimeEzberlemeYazilimi
                 {
                     if (kelime.SonrakiTekrarGunu > 0)
                     {
-                        kelime.SonrakiTekrarGunu--;
+                        kelime.SonrakiTekrarGunu--;//gün atlanmamışsa sınava başlamak 1 gün azaltır
                     }
                 }
             }
@@ -129,7 +129,7 @@ namespace KelimeEzberlemeYazilimi
             int atlanacakgun;
             gunatlandi = true;
             switch (secilengun)
-            {
+            {//belirli gün sayısı kadar her kelimeden gün azalır
                 case 0: atlanacakgun = 1; break;
                 case 1: atlanacakgun = 7; break;
                 case 2: atlanacakgun = 30; break;
@@ -147,7 +147,7 @@ namespace KelimeEzberlemeYazilimi
                     {
                         kelime.SonrakiTekrarGunu = 0;
                         kelime.BilinmeSeviyesi = 0;
-                    }
+                    }//fazla azalmaması için sıfıra sabitler
                 }
             }
             MessageBox.Show(atlanacakgun + " gün atlandı!");
@@ -185,7 +185,7 @@ namespace KelimeEzberlemeYazilimi
                 raporEkrani = new Rapor();
                 raporEkrani.FormClosed += Rapor_FormClosed;
                 raporEkrani.Show();
-                Hide();
+                Hide();//rapor ekranının ardından tekrar açılsın diye
             }
             else
             {

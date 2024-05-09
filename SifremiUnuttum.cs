@@ -26,7 +26,7 @@ namespace KelimeEzberlemeYazilimi
             foreach (Kullanici kullanici in KayitliKullaniciListesi.kayitliKullanicilar)
             {
                 if (kullanici.Eposta == email && kullanici.FavKelime == favkelime)
-                {
+                {//eposta ve favori kelime aynıysa
                     basarili = true;
                     this.kullanici = kullanici;
                     break;
@@ -34,31 +34,21 @@ namespace KelimeEzberlemeYazilimi
             }
             if (basarili) { devamEdiyoruz(); }
             else
-            {
+            {//yanlışsa
                 MessageBox.Show("E-Posta veya Favori Kelimeniz Doğru Değil!",
                 "Başarısız", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         void devamEdiyoruz()
         {
-            //favkelimeLabel.Visible = false;
-            //emailLabel.Visible = false;
-            //SifreOnayLabel.Visible = true;
-            //sifreLabel.Visible = true;
-            //sifreTextBox.Visible = true;
-            //sifreOnayTextBox.Visible = true;
-            //emailTextBox.Visible = false;
-            //favkelimeTextBox.Visible = false;
-            //devamButton.Visible = false;
-            //onaylaButton.Visible = true;
-            panel1.Visible = false;
-            panel2.Visible = true;
+            panel1.Visible = false;//eposta paneli
+            panel2.Visible = true;//sifre yenileme paneli
         }
         private void onaylaButton_Click(object sender, EventArgs e)
         {
             if (sifreTextBox.Text == sifreOnayTextBox.Text)
             {
-                kullanici.Sifre = sifreTextBox.Text;
+                kullanici.Sifre = sifreTextBox.Text;//yeni şifre atama
                 MessageBox.Show("Her şey başarıyla tamamlandı!",
                     "İşlem Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 GirisYap girisyap = new GirisYap();
@@ -79,7 +69,7 @@ namespace KelimeEzberlemeYazilimi
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {
+        {//2. sayfadaki geri butonu
             GirisYap girisyapmaformu = new GirisYap();
             girisyapmaformu.Show();
             Hide();

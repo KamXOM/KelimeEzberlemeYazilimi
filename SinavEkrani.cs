@@ -13,15 +13,6 @@ namespace KelimeEzberlemeYazilimi
 {
     public partial class SinavEkrani : Form
     {
-        private static SinavEkrani instance;
-        public static SinavEkrani GetInstance()
-        {
-            if (instance == null)
-            {
-                instance = new SinavEkrani();
-            }
-            return instance;
-        }
         public SinavEkrani()
         {
             InitializeComponent();
@@ -32,13 +23,13 @@ namespace KelimeEzberlemeYazilimi
         int soruIndex = 0;
         private void SinavEkrani_Load(object sender, EventArgs e)
         {
-            sinavListesi.Clear();
+            sinavListesi.Clear();//listelerin ne olur ne olmaz temizlenmesi
             kullaniciCevaplari.Clear();
-            soruIndex = 0;
+            soruIndex = 0;//index 0 lanması
             Random rastgele = new Random();
             while (KelimeDeposu.kelimeListesi.Any(k => !sinavListesi.Contains(k) &&
             k.BilinmeSeviyesi > 0 && k.SonrakiTekrarGunu == 0))
-            {
+            {//öncelik sınavlistesinde olmayan bilinme sayısı 0 dan fazla olan tekrar günü gelen
                 Kelime rastgeleKelime = KelimeDeposu.kelimeListesi
                     [rastgele.Next(KelimeDeposu.kelimeListesi.Count)];
                 if (!sinavListesi.Contains(rastgeleKelime) && rastgeleKelime.BilinmeSeviyesi > 0
@@ -48,13 +39,13 @@ namespace KelimeEzberlemeYazilimi
                 }
             }
             int j = 0;
-            while (j < Anasayfa.SoruSayisi)
+            while (j < Anasayfa.SoruSayisi)//yeni kelime
             {
                 Kelime rastgeleKelime = KelimeDeposu.kelimeListesi
                     [rastgele.Next(KelimeDeposu.kelimeListesi.Count)];
                 if (!sinavListesi.Contains(rastgeleKelime) && rastgeleKelime.BilinmeSeviyesi == 0
                     && rastgeleKelime.SonrakiTekrarGunu == 0)
-                {
+                {//daha önceden bilinmemiş yeni kelime eklenmesi
                     sinavListesi.Add(rastgeleKelime);
                     j++;
                 }
@@ -64,25 +55,25 @@ namespace KelimeEzberlemeYazilimi
                 string buyukBasHarf = char.ToUpper(kelime.TurkceKelime[0]) +
                     kelime.TurkceKelime.Substring(1);
                 kelimeComboBox.Items.Add(buyukBasHarf);
-            }
+            }//açılır listeye baş harfi büyük öğeler eklenmesi
             string buyukBasHarfli = char.ToUpper(sinavListesi[0].TurkceKelime[0]) +
                     sinavListesi[0].TurkceKelime.Substring(1);
             turkceTextBox.Text = buyukBasHarfli;
             if (!string.IsNullOrWhiteSpace(sinavListesi[0].Resim))
             {
                 pictureBox1.Image = Image.FromFile(sinavListesi[0].Resim);
-            }
+            }//resim koyma 
             kullaniciCevaplari.Clear();
             for (int i = 0; i < sinavListesi.Count; i++)
             {
-                kullaniciCevaplari.Add("");
+                kullaniciCevaplari.Add("");//kullanıcı cevapları listesini hazırlama
             }
         }
         private void pictureBox2_MouseEnter(object sender, EventArgs e)
         {
             pictureBox2.Image = KelimeEzberlemeYazilimi.Resource1.speaker_gif;
         }
-
+        //tatlı bir gif koyma
         private void pictureBox2_MouseLeave(object sender, EventArgs e)
         {
             pictureBox2.Image = KelimeEzberlemeYazilimi.Resource1.speaker;
@@ -93,11 +84,11 @@ namespace KelimeEzberlemeYazilimi
             if (!string.IsNullOrEmpty(cevapTextBox.Text))
             {
                 kullaniciCevaplari[soruIndex] = cevapTextBox.Text.ToLower();
-            }
+            }//cevabı cevap listesine kaydetme
             soruIndex++;
             if (soruIndex >= sinavListesi.Count)
             {
-                soruIndex = 0;//başa dönüyo
+                soruIndex = 0;//sona geldiyse başa dönme
             }
             kelimeComboBox.SelectedIndex = soruIndex;
             string buyukBasHarf = char.ToUpper(sinavListesi[soruIndex].TurkceKelime[0]) +
@@ -111,7 +102,7 @@ namespace KelimeEzberlemeYazilimi
             if (kullaniciCevaplari.Count > soruIndex)
             {
                 cevapTextBox.Text = kullaniciCevaplari[soruIndex];
-            }
+            }//önceden cevap girildiyse onu getirir
             else { cevapTextBox.Clear(); }
             cevapTextBox.Focus();
         }
@@ -143,31 +134,31 @@ namespace KelimeEzberlemeYazilimi
             else { cevapTextBox.Clear(); }
         }
         private void kelimeComboBox_SelectionChangeCommitted(object sender, EventArgs e)
-        {
+        {//combobox değişimi
             if (!string.IsNullOrWhiteSpace(cevapTextBox.Text))
             {
                 kullaniciCevaplari[soruIndex] = cevapTextBox.Text.ToLower();
-            }
+            }//cevabı kaydet boş değilse
             else { kullaniciCevaplari[soruIndex] = ""; }
             soruIndex = kelimeComboBox.SelectedIndex;
             string buyukBasHarf = char.ToUpper(sinavListesi[soruIndex].TurkceKelime[0]) +
                 sinavListesi[soruIndex].TurkceKelime.Substring(1);
-            turkceTextBox.Text = buyukBasHarf;
+            turkceTextBox.Text = buyukBasHarf;//combobox a adını yaz
             if (!string.IsNullOrWhiteSpace(sinavListesi[soruIndex].Resim))
             {
                 pictureBox1.Image = Image.FromFile(sinavListesi[soruIndex].Resim);
-            }
+            }//resim varsa koy
             else { pictureBox1.Image = null; }
             if (!string.IsNullOrWhiteSpace(kullaniciCevaplari[soruIndex]))
             {
                 cevapTextBox.Text = kullaniciCevaplari[soruIndex];
-            }
+            }//cevabı getir varsa
             else { cevapTextBox.Clear(); }
         }
         private void sinavBitirButton_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(cevapTextBox.Text))
-            {
+            {//cevap varsa kaydet
                 kullaniciCevaplari[soruIndex] = cevapTextBox.Text.ToLower();
             }
             KontrolEt();
@@ -178,7 +169,7 @@ namespace KelimeEzberlemeYazilimi
         private void KontrolEt()
         {
             for (int i = 0; i < sinavListesi.Count; i++)
-            {
+            {   //cevap yoksa boş atıyor varsa kullanıcı cevaplarından ilgili cevabı atıyor
                 string kullaniciCevabi = string.IsNullOrEmpty(kullaniciCevaplari[i]) ? "" : kullaniciCevaplari[i].ToLower();
                 string dogruCevap = sinavListesi[i].IngilizceKarsiligi.ToLower();
                 kullaniciCevabi = kullaniciCevabi.Replace(" ", "");
@@ -187,74 +178,26 @@ namespace KelimeEzberlemeYazilimi
                 {
                     if (kullaniciCevabi == dogruCevap)
                     {
-                        MessageBox.Show("Kelime:" + sinavListesi[i].TurkceKelime + sinavListesi[i].BilinmeSeviyesi + sinavListesi[i].SonrakiTekrarGunu);
                         KelimeDeposu.BilinmeSeviyesiniArttir(sinavListesi[i].TurkceKelime, true);
                         MessageBox.Show("Soru " + (i + 1) + " doğru!");
-                        MessageBox.Show("Kelime:" + sinavListesi[i].TurkceKelime + sinavListesi[i].BilinmeSeviyesi + sinavListesi[i].SonrakiTekrarGunu);
-                    }
+                    }//doğruysa
                     else
                     {
-                        MessageBox.Show("Kelime:" + sinavListesi[i].TurkceKelime + sinavListesi[i].BilinmeSeviyesi + sinavListesi[i].SonrakiTekrarGunu);
                         KelimeDeposu.BilinmeSeviyesiniArttir(sinavListesi[i].TurkceKelime, false);
                         MessageBox.Show("Soru " + (i + 1) + " yanlış!");
-                        MessageBox.Show("Kelime:" + sinavListesi[i].TurkceKelime + sinavListesi[i].BilinmeSeviyesi + sinavListesi[i].SonrakiTekrarGunu);
-                    }
+                    }//yanlışsa
                 }
                 else
                 {
-                    MessageBox.Show("Kelime:" + sinavListesi[i].TurkceKelime + sinavListesi[i].BilinmeSeviyesi + sinavListesi[i].SonrakiTekrarGunu);
                     KelimeDeposu.BilinmeSeviyesiniArttir(sinavListesi[i].TurkceKelime, false);
                     MessageBox.Show("Soru " + (i + 1) + " boş!");
-                    MessageBox.Show("Kelime:" + sinavListesi[i].TurkceKelime + sinavListesi[i].BilinmeSeviyesi + sinavListesi[i].SonrakiTekrarGunu);
-                }
+                }//boşsa ama yanlışla aynı işlem yapılıyor
             }
         }
 
         private void SinavEkrani_Shown(object sender, EventArgs e)
         {
-            /*sinavListesi.Clear();
-            kullaniciCevaplari.Clear();
-            soruIndex = 0;
-            Random rastgele = new Random();
-            while (KelimeDeposu.kelimeListesi.Any(k => !sinavListesi.Contains(k) &&
-            k.BilinmeSeviyesi > 0 && k.SonrakiTekrarGunu == 0))
-            {
-                Kelime rastgeleKelime = KelimeDeposu.kelimeListesi
-                    [rastgele.Next(KelimeDeposu.kelimeListesi.Count)];
-                if (!sinavListesi.Contains(rastgeleKelime) && rastgeleKelime.BilinmeSeviyesi > 0
-                    && rastgeleKelime.SonrakiTekrarGunu == 0)
-                {
-                    sinavListesi.Add(rastgeleKelime);
-                }
-            }
-            while (sinavListesi.Count < Anasayfa.SoruSayisi)
-            {
-                Kelime rastgeleKelime = KelimeDeposu.kelimeListesi
-                    [rastgele.Next(KelimeDeposu.kelimeListesi.Count)];
-                if (!sinavListesi.Contains(rastgeleKelime) && rastgeleKelime.BilinmeSeviyesi == 0
-                    && rastgeleKelime.SonrakiTekrarGunu == 0)
-                {
-                    sinavListesi.Add(rastgeleKelime);
-                }
-            }
-            foreach (Kelime kelime in sinavListesi)
-            {
-                string buyukBasHarf = char.ToUpper(kelime.TurkceKelime[0]) +
-                    kelime.TurkceKelime.Substring(1);
-                kelimeComboBox.Items.Add(buyukBasHarf);
-            }
-            string buyukBasHarfli = char.ToUpper(sinavListesi[0].TurkceKelime[0]) +
-                    sinavListesi[0].TurkceKelime.Substring(1);
-            turkceTextBox.Text = buyukBasHarfli;
-            if (!string.IsNullOrWhiteSpace(sinavListesi[0].Resim))
-            {
-                pictureBox1.Image = Image.FromFile(sinavListesi[0].Resim);
-            }
-            kullaniciCevaplari.Clear();
-            for (int i = 0; i < Anasayfa.SoruSayisi; i++)
-            {
-                kullaniciCevaplari.Add("");
-            }*/
+
         }
     }
 }
