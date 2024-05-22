@@ -12,7 +12,6 @@ namespace KelimeEzberlemeYazilimi
 {
     public partial class KayitOl : Form
     {
-
         public KayitOl()
         {
             InitializeComponent();
