@@ -66,11 +66,6 @@ namespace KelimeEzberlemeYazilimi
             }
         }
 
-        private void emailTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void geriButton_Click(object sender, EventArgs e)
         {
             Anasayfa anasayfa = new Anasayfa();

@@ -118,7 +118,6 @@
             emailTextBox.PlaceholderText = "örnek@hotmail.com";
             emailTextBox.Size = new Size(277, 27);
             emailTextBox.TabIndex = 1;
-            emailTextBox.TextChanged += emailTextBox_TextChanged;
             // 
             // sifreTextBox
             // 

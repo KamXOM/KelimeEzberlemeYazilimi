@@ -22,10 +22,6 @@ namespace KelimeEzberlemeYazilimi
         {
             YukleDataGridView();
         }
-        private void Rapor_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            
-        }
         private void YukleDataGridView()
         {
             var filtrelenmisKelimeler = KelimeDeposu.kelimeListesi.ToList();
@@ -52,8 +48,6 @@ namespace KelimeEzberlemeYazilimi
             printPreviewDialog1.Document = printDocument1;
             printPreviewDialog1.ShowDialog();
         }
- 
-      
         private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
         {
             // Yazdırılacak DataGridView'in başlıklarını çiz
