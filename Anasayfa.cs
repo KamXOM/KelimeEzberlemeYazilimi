@@ -40,7 +40,23 @@ namespace KelimeEzberlemeYazilimi
 
         private void Anasayfa_Load(object sender, EventArgs e)
         {
+            if (AccessSettings.DisleksiModuAktif)
+            {
+                AccessSettings.ChangeFontFamily(this.Controls, AccessSettings.DisleksiFont);
+                disleksiCheckBox.Checked = true;
+            }
+            else
+                AccessSettings.ChangeFontFamily(this.Controls, AccessSettings.NormalFont);
 
+            AccessSettings.ApplyHighContrast(this.Controls, AccessSettings.HighContrastAktif, this);
+            if (AccessSettings.HighContrastAktif)
+                KontrastCheckBox.Checked = true;
+
+            if (AccessSettings.BiggerFontAktif)
+                bigfontCheckBox.Checked = true;
+            AccessSettings.SaveOriginalValues(this); // Orijinal değerleri kaydet
+            AccessSettings.ScaleUI(this, AccessSettings.BiggerFontAktif);
+            AccessSettings.AdjustForDyslexia(this, AccessSettings.DisleksiModuAktif);
         }
         private void Anasayfa_Shown(object sender, EventArgs e)
         {
@@ -64,11 +80,18 @@ namespace KelimeEzberlemeYazilimi
                 kelimeEkleButton.Visible = false;
                 raporButton.Visible = false;
             }
+
+            AccessSettings.SaveOriginalValues(this); // Orijinal değerleri kaydet
+            AccessSettings.ScaleUI(this, AccessSettings.BiggerFontAktif);
+            AccessSettings.AdjustForDyslexia(this, AccessSettings.DisleksiModuAktif);
         }
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             settingsPanel.Visible = true;
             panel1.Visible = false;
+            AccessSettings.SaveOriginalValues(this); // Orijinal değerleri kaydet
+            AccessSettings.ScaleUI(this, AccessSettings.BiggerFontAktif);
+            AccessSettings.AdjustForDyslexia(this, AccessSettings.DisleksiModuAktif);
         }
         private void pictureBox2_MouseEnter(object sender, EventArgs e)
         {
@@ -84,6 +107,9 @@ namespace KelimeEzberlemeYazilimi
         {
             panel1.Visible = true;
             settingsPanel.Visible = false;
+            AccessSettings.SaveOriginalValues(this); // Orijinal değerleri kaydet
+            AccessSettings.ScaleUI(this, AccessSettings.BiggerFontAktif);
+            AccessSettings.AdjustForDyslexia(this, AccessSettings.DisleksiModuAktif);
         }
 
         private void Anasayfa_ClientSizeChanged(object sender, EventArgs e)
@@ -197,6 +223,31 @@ namespace KelimeEzberlemeYazilimi
             // Rapor ekranı kapatıldığında Anasayfa formunu yeniden aç
             Show();
             Activate();
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void disleksiCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            AccessSettings.DisleksiModuAktif = disleksiCheckBox.Checked;
+            AccessSettings.ChangeFontFamily(this.Controls, AccessSettings.DisleksiModuAktif
+                ? AccessSettings.DisleksiFont : AccessSettings.NormalFont);
+            AccessSettings.AdjustForDyslexia(this, AccessSettings.DisleksiModuAktif);
+        }
+
+        private void KontrastCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            AccessSettings.HighContrastAktif = KontrastCheckBox.Checked;
+            AccessSettings.ApplyHighContrast(this.Controls, AccessSettings.HighContrastAktif, this);
+        }
+
+        private void bigfontCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            AccessSettings.BiggerFontAktif = bigfontCheckBox.Checked;
+            AccessSettings.ScaleUI(this, AccessSettings.BiggerFontAktif);
         }
     }
 }

@@ -19,16 +19,18 @@ namespace KelimeEzberlemeYazilimi
 
         private void Form3_Load(object sender, EventArgs e)
         {
-            PanelOrtalama();
-        }
-
-        private void PanelOrtalama()
-        {
-            if (panel1 != null)
+            if (AccessSettings.DisleksiModuAktif)
             {
-                panel1.Left = (ClientSize.Width - panel1.Width) / 2;
-                panel1.Top = (ClientSize.Height - panel1.Height) / 2;
+                AccessSettings.ChangeFontFamily(this.Controls, AccessSettings.DisleksiFont);
             }
+            else
+                AccessSettings.ChangeFontFamily(this.Controls, AccessSettings.NormalFont);
+            AccessSettings.ApplyHighContrast(this.Controls, AccessSettings.HighContrastAktif, this);
+            AccessSettings.SaveOriginalValues(this); // Orijinal değerleri kaydet
+            if (AccessSettings.BiggerFontAktif)
+                AccessSettings.ScaleUI(this, true);
+            if (AccessSettings.DisleksiModuAktif)
+                AccessSettings.AdjustForDyslexia(this, AccessSettings.DisleksiModuAktif);
         }
 
         private void kayitButton_Click(object sender, EventArgs e)

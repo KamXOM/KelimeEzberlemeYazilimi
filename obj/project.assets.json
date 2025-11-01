@@ -88,11 +88,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\onurm\\source\\repos\\KelimeEzberlemeYazilimi\\KelimeEzberlemeYazilimi\\KelimeEzberlemeYazilimi.csproj",
+      "projectUniqueName": "C:\\Users\\onurm\\OneDrive\\Masaüstü\\YazılımYapımıProje-Onur Malay\\KelimeEzberlemeYazilimi\\KelimeEzberlemeYazilimi\\KelimeEzberlemeYazilimi.csproj",
       "projectName": "KelimeEzberlemeYazilimi",
-      "projectPath": "C:\\Users\\onurm\\source\\repos\\KelimeEzberlemeYazilimi\\KelimeEzberlemeYazilimi\\KelimeEzberlemeYazilimi.csproj",
+      "projectPath": "C:\\Users\\onurm\\OneDrive\\Masaüstü\\YazılımYapımıProje-Onur Malay\\KelimeEzberlemeYazilimi\\KelimeEzberlemeYazilimi\\KelimeEzberlemeYazilimi.csproj",
       "packagesPath": "C:\\Users\\onurm\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\onurm\\source\\repos\\KelimeEzberlemeYazilimi\\KelimeEzberlemeYazilimi\\obj\\",
+      "outputPath": "C:\\Users\\onurm\\OneDrive\\Masaüstü\\YazılımYapımıProje-Onur Malay\\KelimeEzberlemeYazilimi\\KelimeEzberlemeYazilimi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -124,7 +124,8 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      }
+      },
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net8.0-windows7.0": {
@@ -154,7 +155,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.205/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

@@ -74,5 +74,21 @@ namespace KelimeEzberlemeYazilimi
             girisyapmaformu.Show();
             Hide();
         }
+
+        private void SifremiUnuttum_Load(object sender, EventArgs e)
+        {
+            if (AccessSettings.DisleksiModuAktif)
+            {
+                AccessSettings.ChangeFontFamily(this.Controls, AccessSettings.DisleksiFont);
+            }
+            else
+                AccessSettings.ChangeFontFamily(this.Controls, AccessSettings.NormalFont);
+            AccessSettings.ApplyHighContrast(this.Controls, AccessSettings.HighContrastAktif, this);
+            AccessSettings.SaveOriginalValues(this); // Orijinal değerleri kaydet
+            if (AccessSettings.BiggerFontAktif)
+                AccessSettings.ScaleUI(this, true);
+            if (AccessSettings.DisleksiModuAktif)
+                AccessSettings.AdjustForDyslexia(this, AccessSettings.DisleksiModuAktif);
+        }
     }
 }

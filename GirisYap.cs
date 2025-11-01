@@ -38,21 +38,28 @@ namespace KelimeEzberlemeYazilimi
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            PanelOrtalama();
+            if (AccessSettings.DisleksiModuAktif)
+            {
+                AccessSettings.ChangeFontFamily(this.Controls, AccessSettings.DisleksiFont);
+            }
+            else
+                AccessSettings.ChangeFontFamily(this.Controls, AccessSettings.NormalFont);
+            AccessSettings.ApplyHighContrast(this.Controls, AccessSettings.HighContrastAktif, this);
+            AccessSettings.SaveOriginalValues(this); // Orijinal deðerleri kaydet
+            if (AccessSettings.BiggerFontAktif)
+                AccessSettings.ScaleUI(this, true);
+            if (AccessSettings.DisleksiModuAktif)
+                AccessSettings.AdjustForDyslexia(this, AccessSettings.DisleksiModuAktif);
         }
 
         private void Form1_Shown(object sender, EventArgs e)
         {
             ActiveControl = null;
-        }
-
-        private void PanelOrtalama()
-        {
-            if (girisPanel != null)
-            {
-                girisPanel.Left = (ClientSize.Width - girisPanel.Width) / 2;
-                girisPanel.Top = (ClientSize.Height - girisPanel.Height) / 2;
-            }
+            AccessSettings.SaveOriginalValues(this); // Orijinal deðerleri kaydet
+            if (AccessSettings.BiggerFontAktif)
+                AccessSettings.ScaleUI(this, true);
+            if (AccessSettings.DisleksiModuAktif)
+                AccessSettings.AdjustForDyslexia(this, AccessSettings.DisleksiModuAktif);
         }
 
         private void geriButton_Click(object sender, EventArgs e)

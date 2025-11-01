@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wvH+8NldYuSs2v8KRf4fL5aBLEKjFTQGfMQO6IcLoSuudw/X4F5Q+3Sapbq6/rMxgwqXnIZN9PJ6VzRKQDEXNw==",
+  "dgSpecHash": "z04h8afTCy0=",
   "success": true,
-  "projectFilePath": "C:\\Users\\onurm\\source\\repos\\KelimeEzberlemeYazilimi\\KelimeEzberlemeYazilimi\\KelimeEzberlemeYazilimi.csproj",
+  "projectFilePath": "C:\\Users\\onurm\\OneDrive\\Masaüstü\\YazılımYapımıProje-Onur Malay\\KelimeEzberlemeYazilimi\\KelimeEzberlemeYazilimi\\KelimeEzberlemeYazilimi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\onurm\\.nuget\\packages\\oxyplot.core\\2.1.2\\oxyplot.core.2.1.2.nupkg.sha512",
     "C:\\Users\\onurm\\.nuget\\packages\\oxyplot.windowsforms\\2.1.2\\oxyplot.windowsforms.2.1.2.nupkg.sha512"

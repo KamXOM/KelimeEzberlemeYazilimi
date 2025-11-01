@@ -37,7 +37,18 @@ namespace KelimeEzberlemeYazilimi
         }
         private void Form2_Load(object sender, EventArgs e)
         {
-            PanelOrtalama();
+            if (AccessSettings.DisleksiModuAktif)
+            {
+                AccessSettings.ChangeFontFamily(this.Controls, AccessSettings.DisleksiFont);
+            }
+            else
+                AccessSettings.ChangeFontFamily(this.Controls, AccessSettings.NormalFont);
+            AccessSettings.ApplyHighContrast(this.Controls, AccessSettings.HighContrastAktif, this);
+            AccessSettings.SaveOriginalValues(this); // Orijinal değerleri kaydet
+            if (AccessSettings.BiggerFontAktif)
+                AccessSettings.ScaleUI(this, true);
+            if (AccessSettings.DisleksiModuAktif)
+                AccessSettings.AdjustForDyslexia(this, AccessSettings.DisleksiModuAktif);
             openFileDialog1.Title = "Bir Resim Seçiniz";
             openFileDialog1.FileName = "Resim Seç";
             openFileDialog1.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
@@ -52,17 +63,14 @@ namespace KelimeEzberlemeYazilimi
                 pictureBox.Load(openFileDialog1.FileName);//resim yükleme
             }
         }
-        private void PanelOrtalama()
-        {
-            if (kelimePanel != null)
-            {
-                kelimePanel.Left = (ClientSize.Width - kelimePanel.Width) / 2;
-                kelimePanel.Top = (ClientSize.Height - kelimePanel.Height) / 2;
-            }
-        }
         private void Form2_Shown(object sender, EventArgs e)
         {
             ActiveControl = null;
+            AccessSettings.SaveOriginalValues(this); // Orijinal değerleri kaydet
+            if (AccessSettings.BiggerFontAktif)
+                AccessSettings.ScaleUI(this, true);
+            if (AccessSettings.DisleksiModuAktif)
+                AccessSettings.AdjustForDyslexia(this, AccessSettings.DisleksiModuAktif);
         }
         private void kaydetButton_Click(object sender, EventArgs e)
         {

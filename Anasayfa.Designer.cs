@@ -38,6 +38,9 @@
             programAdiLabel = new Label();
             pictureBox1 = new PictureBox();
             settingsPanel = new Panel();
+            bigfontCheckBox = new CheckBox();
+            KontrastCheckBox = new CheckBox();
+            disleksiCheckBox = new CheckBox();
             pictureBox2 = new PictureBox();
             checkBox1 = new CheckBox();
             label4 = new Label();
@@ -151,6 +154,7 @@
             programAdiLabel.Name = "programAdiLabel";
             programAdiLabel.Size = new Size(434, 46);
             programAdiLabel.TabIndex = 1;
+            programAdiLabel.Tag = "Baslik";
             programAdiLabel.Text = "Kelime Ezberleme Yazılımı";
             // 
             // pictureBox1
@@ -169,6 +173,9 @@
             // settingsPanel
             // 
             settingsPanel.Anchor = AnchorStyles.None;
+            settingsPanel.Controls.Add(bigfontCheckBox);
+            settingsPanel.Controls.Add(KontrastCheckBox);
+            settingsPanel.Controls.Add(disleksiCheckBox);
             settingsPanel.Controls.Add(pictureBox2);
             settingsPanel.Controls.Add(checkBox1);
             settingsPanel.Controls.Add(label4);
@@ -182,6 +189,45 @@
             settingsPanel.Name = "settingsPanel";
             settingsPanel.Size = new Size(776, 426);
             settingsPanel.TabIndex = 4;
+            // 
+            // bigfontCheckBox
+            // 
+            bigfontCheckBox.Anchor = AnchorStyles.None;
+            bigfontCheckBox.AutoSize = true;
+            bigfontCheckBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            bigfontCheckBox.Location = new Point(46, 324);
+            bigfontCheckBox.Name = "bigfontCheckBox";
+            bigfontCheckBox.Size = new Size(138, 27);
+            bigfontCheckBox.TabIndex = 12;
+            bigfontCheckBox.Text = "Büyük Yazılar";
+            bigfontCheckBox.UseVisualStyleBackColor = true;
+            bigfontCheckBox.CheckedChanged += bigfontCheckBox_CheckedChanged;
+            // 
+            // KontrastCheckBox
+            // 
+            KontrastCheckBox.Anchor = AnchorStyles.None;
+            KontrastCheckBox.AutoSize = true;
+            KontrastCheckBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            KontrastCheckBox.Location = new Point(46, 291);
+            KontrastCheckBox.Name = "KontrastCheckBox";
+            KontrastCheckBox.Size = new Size(160, 27);
+            KontrastCheckBox.TabIndex = 11;
+            KontrastCheckBox.Text = "Yüksek Kontrast";
+            KontrastCheckBox.UseVisualStyleBackColor = true;
+            KontrastCheckBox.CheckedChanged += KontrastCheckBox_CheckedChanged;
+            // 
+            // disleksiCheckBox
+            // 
+            disleksiCheckBox.Anchor = AnchorStyles.None;
+            disleksiCheckBox.AutoSize = true;
+            disleksiCheckBox.Font = new Font("OpenDyslexic", 10.1999989F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            disleksiCheckBox.Location = new Point(46, 250);
+            disleksiCheckBox.Name = "disleksiCheckBox";
+            disleksiCheckBox.Size = new Size(213, 35);
+            disleksiCheckBox.TabIndex = 10;
+            disleksiCheckBox.Text = "Disleksi Modu";
+            disleksiCheckBox.UseVisualStyleBackColor = true;
+            disleksiCheckBox.CheckedChanged += disleksiCheckBox_CheckedChanged;
             // 
             // pictureBox2
             // 
@@ -325,5 +371,8 @@
         private Button girisYapButton;
         private Button kelimeEkleButton;
         private Button raporButton;
+        private CheckBox bigfontCheckBox;
+        private CheckBox KontrastCheckBox;
+        private CheckBox disleksiCheckBox;
     }
 }

@@ -216,6 +216,7 @@
             Name = "SifremiUnuttum";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Kelime Ezberleme Yazılımı";
+            Load += SifremiUnuttum_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
